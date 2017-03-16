@@ -5,40 +5,34 @@
  */
 
 /*****************************************
- ** File:    Student.h
+ ** File:    Student.cpp
  ** Project: CMSC 202 lab6, Spring 2017
  ** Author:  Uzoma Uwanamodo
  ** Date:    03/15/2017
  ** Section: 05
  ** E-mail:  uu3@umbc.edu
  ** 
- ** This file contains the header for the Student class.
+ ** This file contains the definition for the Student class.
  ** 
  ** 
  ** 
  ** 
  *********************************************/
-
-#ifndef STUDENT_H
-#define STUDENT_H
-
 #include <iostream>
-#include <string>
+#include "Student.h"
 
 using namespace std;
 
-class Student {
-public:
-    Student();
-    Student(int,double);
-    void Display();
-    ~Student();
+Student::Student() {
 
-private:
-    int m_num;
-    float *m_ptr;
-    double m_grade;
-};
+}
 
-#endif /* STUDENT_H */
+Student::Student(int index, double grade) : m_grade(grade), m_num(index) {
+}
 
+Student::~Student() {
+}
+
+void Student::Display() {
+    cout << "Student" << m_num << ": " << m_grade << endl;
+}
